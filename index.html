@@ -39,7 +39,6 @@
 
     .info__body__pull-down {
       color: #a5a9af;
-      line-height: 1rem;
     }
 
     .info__body__pull-down:before,
@@ -97,6 +96,21 @@
     .body__list__item + .body__list__item {
       margin-top: 1.75rem;
     }
+
+    .cloud {
+      position: absolute;
+      z-index: 9999;
+      animation: cloud 15s linear infinite;
+    }
+
+    @keyframes cloud {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
   </style>
   <script>
     window.requestAnimFrame = (function () {
@@ -111,7 +125,7 @@
   <body>
     <section class="info w-72 h-96 m-auto mt-4 rounded-xl">
       <section class="info__top relative w-full h-36 rounded-t-xl">
-        <div class="info__top__banner w-full h-full bg-black">
+        <div class="info__top__banner w-full h-full rounded-t-xl">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 841.89 595.28"
@@ -325,7 +339,7 @@
                 d="M430.57,225.21a1.64,1.64,0,0,1,1.53.75l14.21,23.76c.3.5-.4,1-.88.64l-4.56-3.45a1.73,1.73,0,0,0-2.19.11l-1,.95a2.57,2.57,0,0,1-3.74-.27l-2.61-3.46a1,1,0,0,0-.76-.37Z"
               />
               <path
-                class="cls-6"
+                class="cloud cls-6"
                 d="M146.26,306.21a10.56,10.56,0,0,1-.41-21.12,12.65,12.65,0,0,1,24.7,1.7,5.61,5.61,0,0,1,6.13,6A6.79,6.79,0,0,1,175,306.21Z"
               />
               <polygon
@@ -349,7 +363,7 @@
                 d="M272.47,301.72A36.32,36.32,0,0,0,224,300.23L151.1,358.79a82.81,82.81,0,0,1-15.29,7.92c-9.44,3.78-22.2,7-30.78,7H365.17Z"
               />
               <path
-                class="cls-6"
+                class="cloud cls-6"
                 d="M260.61,266.64A10.76,10.76,0,1,1,263,245.37,14.44,14.44,0,0,1,291,242.62a9.69,9.69,0,0,1,2.92-.45,9.54,9.54,0,0,1,9.51,8.78,6,6,0,0,1,8.59,5.48,5.11,5.11,0,0,1-.08,10.21Z"
               />
               <path
@@ -461,11 +475,15 @@
                 d="M282.15,304.08a.51.51,0,0,1,.41-.26v12.93h-6.21a.57.57,0,0,1-.5-.84Z"
               />
               <path
-                class="cls-6"
+                class="sun cls-21"
+                d="M261.7,171a21.84,21.84,0,1,1-21.84-21.84A21.84,21.84,0,0,1,261.7,171Z"
+              />
+              <path
+                class="cloud cls-6"
                 d="M470.64,190.26A13.44,13.44,0,1,0,465,164.65a16.08,16.08,0,0,0-31.62.53,7.76,7.76,0,0,0-9.81,7.89,8.63,8.63,0,1,0-1,17.18Z"
               />
               <path
-                class="cls-6"
+                class="cloud cls-6"
                 d="M687.22,316.12A9,9,0,1,1,691,299a10.78,10.78,0,0,1,21.21.35,5.21,5.21,0,0,1,6.58,5.3,5.78,5.78,0,1,1,.65,11.52Z"
               />
               <polygon
@@ -484,12 +502,6 @@
                 class="cls-5"
                 d="M539.91,204.61a1.61,1.61,0,0,0-1.43-.76V242.2l2,1.64a2.48,2.48,0,0,0,3.63-.53l5.41-9a1.18,1.18,0,0,1,1.77-.23l11.62,10.57c.35.32.93-.06.69-.46Z"
               />
-              <g class="sun">
-                <path
-                  class="cls-21"
-                  d="M261.7,171a21.84,21.84,0,1,1-21.84-21.84A21.84,21.84,0,0,1,261.7,171Z"
-                />
-              </g>
               <path
                 class="cls-22"
                 d="M448.14,282a46.26,46.26,0,0,0-61.79-1.9L293.6,354.61a105.22,105.22,0,0,1-19.47,10.09c-12,4.81-28.27,8.95-39.19,8.95H566.17Z"
@@ -1018,13 +1030,13 @@
             <path
               fill="white"
               d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
-              transform="translate(110 120) scale(0.5)"
+              transform="translate(220 50) scale(0.5) rotate(45)"
             />
           </svg>
         </div>
       </section>
       <section class="info__body">
-        <div class="info__body__pull-down text-center mt-4 relative">
+        <div class="info__body__pull-down text-center mt-4 relative leading-4">
           Pull down
         </div>
         <ul class="info__body__list">
